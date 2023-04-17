@@ -25,7 +25,7 @@
 # 📖 [OPP-School-Library] <a name="about-project"></a>
 
 
-**[OPP-School-Library]** OPP-School-Library is an school library app which is designed with Ruby and you can add teachers, students, books and see books borrow records.
+**[OPP-School-Library]** is an school library app which is designed with Ruby and you can add teachers, students, books and see books borrow records.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -61,7 +61,6 @@ To get a local copy up and running, follow these steps.
 
 Clone this repository to your desired folder:
 
-cd my_folder
 git clone https://github.com/otmanTR/OOP-School-Library.git
 
 ### Install
