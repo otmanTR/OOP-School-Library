@@ -24,9 +24,8 @@
 
 # 📖 [OPP-School-Library] <a name="about-project"></a>
 
-> OPP-School-Library is an school library app which is designed with Ruby and you can add teachers, students, books and see books borrow records.
 
-**[your_project__name]** is a...
+**[OPP-School-Library]** OPP-School-Library is an school library app which is designed with Ruby and you can add teachers, students, books and see books borrow records.
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -36,7 +35,6 @@
 
 ### Key Features <a name="key-features"></a>
 
-> Describe between 1-3 key features of the application.
 
 - **[Add functionalty]**
 - **[Record Functionalty]**
@@ -48,8 +46,6 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-> Add a link to your deployed project.
-
 - [Live Demo Link](not ready)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -58,21 +54,8 @@
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
-> Describe how a new developer could make use of your project.
 
 To get a local copy up and running, follow these steps.
-
-### Prerequisites
-
-In order to run this project you need:
-
-<!--
-Example command:
-
-```sh
- gem install rails
-```
- -->
 
 ### Setup
 
@@ -141,7 +124,6 @@ Example:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-> Describe 1 - 3 features you will add to the project.
 
 - [ ] **[Basic UI]**
 
@@ -170,8 +152,6 @@ Give a ⭐️ if you like this project!
 <!-- ACKNOWLEDGEMENTS -->
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
-
-> Give credit to everyone who inspired your codebase.
 
 I would like to thank all Microverse Family.
 
