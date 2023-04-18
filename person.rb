@@ -1,4 +1,7 @@
-require "./nameable"
+require './nameable'
+require'./decorator'
+require'./capitalize_decorator'
+require'./trimmer_decorator'
 
 class Person < Nameable
   attr_reader :id
@@ -9,6 +12,7 @@ class Person < Nameable
     @age = age
     @name = name
     @parent_permission = parent_permission
+    super()
   end
 
   def correct_name
@@ -29,3 +33,14 @@ class Person < Nameable
     false
   end
 end
+
+person = Person.new(22, name: 'maximilianus')
+puts person.correct_name
+
+capitalized_person = CapitalizeDecorator.new(person)
+
+puts capitalized_person.correct_name
+
+capitalized_trimmedPerson = TrimmerDecorator.new(capitalized_person)
+
+puts capitalized_trimmedPerson.correct_name

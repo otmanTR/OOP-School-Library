@@ -1,8 +1,7 @@
-require "./decorator"
+require './decorator'
 
-class TrimmerDecoratr < Decorator
-
-    def correct_name
-        @nameable.correct_name[0, 10]
-    end
+class TrimmerDecorator < Decorator
+  def correct_name
+    @nameable.correct_name[0, 10]
+  end
 end
