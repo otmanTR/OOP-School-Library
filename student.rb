@@ -1,4 +1,5 @@
 require './person'
+require './classroom'
 
 class Student < Person
   attr_accessor :classroom
@@ -13,6 +14,6 @@ class Student < Person
   end
 
   def add_classroom(classroom)
-    classroom.student.push(self) unless classroom.student.include?(self)
+    classroom.students.push(self) unless classroom.students.include?(self)
   end
 end
