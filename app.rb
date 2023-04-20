@@ -21,4 +21,12 @@ class App
             end
         end
 
+        def people_list
+            if people.length = 0
+                puts 'There is no people in the list'
+            else
+                @people.each_with_index do |person, index|
+                    puts "#{index} - [#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
+                end
+
 end 
