@@ -28,5 +28,19 @@ class App
                 @people.each_with_index do |person, index|
                     puts "#{index} - [#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
                 end
+            end
+
+            def create_person
+                puts 'Do you want to create a student (1) or a teacher (2)? [input the number]:'
+                type = gets.chomp
+                case type
+                when '1'
+                    create_student
+                when '2'
+                    create_teacher
+                else
+                    puts 'Invalid selection'
+                end
+            end 
 
 end 
