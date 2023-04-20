@@ -7,7 +7,7 @@ class App
     attr_accessor :persons, :rentals, :books
 
     def initialize
-        @persons = []
+        @people = []
         @books = []
         @rentals = []
     end
@@ -23,24 +23,39 @@ class App
 
         def people_list
             if people.length = 0
-                puts 'There is no people in the list'
+                puts 'There is no person in the list'
             else
                 @people.each_with_index do |person, index|
                     puts "#{index} - [#{person.class}] Name: #{person.name}, ID: #{person.id}, Age: #{person.age}"
                 end
             end
 
-            def create_person
+            def person_create
                 puts 'Do you want to create a student (1) or a teacher (2)? [input the number]:'
                 type = gets.chomp
                 case type
                 when '1'
-                    create_student
+                    student_create
                 when '2'
-                    create_teacher
+                    teacher_create
                 else
                     puts 'Invalid selection'
                 end
-            end 
+            end
+            
+            def student_create
+                puts 'Name:'
+                name = gets.chomp
+                puts 'Age:'
+                age = gets.chomp
+                puts 'Has parent permission? [y/n]:'
+                permission = gets.chomp.downcase
+                parent_permission == permission = 'y'
+                puts 'Classroom:'
+                @people << Student.new(age: age, name: name, parent_permission: parent_permission, classroom: classroom)
+                puts 'Person created successfully'
+            end
+
+      
 
 end 
