@@ -22,14 +22,14 @@ class Person < Nameable
   end
 
   def can_use_services?
-    return true if is_of_age? || @parent_permission
+    return true if of_age? || @parent_permission
 
     false
   end
 
   private
 
-  def is_of_age?
+  def of_age?
     return true if age.to_i >= 18
 
     false
