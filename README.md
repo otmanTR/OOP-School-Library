@@ -114,7 +114,7 @@ Example:
 
 - GitHub: [@otmanTR](https://github.com/otmanTR)
 - Twitter: [@hotumanzade](https://twitter.com/hotumanzade)
-- LinkedIn: [Burak Otman](linkedin.com/in/burak-otman-88646443)
+- LinkedIn: [Burak Otman](https://www.linkedin.com/in/burak-otman-88646443/)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
