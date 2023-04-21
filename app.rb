@@ -83,4 +83,16 @@ class App
         puts 'Rental created successfullu!'
       end
 
+      def rental_list
+        puts 'Enter id of person: '
+        people_list
+        person_id = gets.chomp.to_i
+        person_rentals = @rentals.select { |rental| rental.person.id == person_id }
+        return puts 'No rentals found for this ID' if person_rentals.empty?
+
+        person_rentals.each_with_index do |rental, index|
+            the_rental = "Rental #{index} - Book: #{rental.book.title}"
+            renter = "#{rental.book.author}, Person: #{rental.person.name}, Date: #{rental.date}"
+            puts "#{the_rental} by #{renter}"
+      end
 end 
