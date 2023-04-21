@@ -87,22 +87,21 @@ class App
   end
 
   def new_rental
-    puts 'select a book from the following list by number'
+    puts 'select a book from the following list by number:'
     book_list
-    book_index = gets.chomp.to_i
-    @rented_book = @books[book_index]
-
-    puts 'Select a person from the following list by numner (not id)'
+    bk_index = gets.chomp.to_i
+    rented_book = @books[bk_index]
+    puts 'select a person from the following list by number (not id)'
     people_list
     person_index = gets.chomp.to_i
     renter = @people[person_index]
     puts 'Date (YYYY-MM-DD):'
     date = gets.chomp
     if renter.can_use_services?
-      @rentals << Rental.new(date, @books[book_index], @people[person_index])
-      puts 'Rental created successfullu!'
+      @rentals.push Rental.new(date, rented_book, renter)
+      puts 'Rental created successfully'
     else
-      puts 'person need borrow permissions'
+      puts 'person lacks borrow permissions'
     end
   end
 
