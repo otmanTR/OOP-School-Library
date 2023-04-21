@@ -49,6 +49,29 @@ class App
     end
   end
 
+  def teacher_create
+    puts 'Age:'
+    age = gets.chomp
+    puts 'Name:'
+    name = gets.chomp
+    puts 'Specialization:'
+    specialization = gets.chomp
+    parent_permission = true
+    @people.push Teacher.new(age: age, name: name, specialization: specialization,
+                             parent_permission: parent_permission)
+    puts 'Person created successfully'
+  end
+
+  def new_book
+    puts 'Title:'
+    title = gets.chomp
+    puts 'Author:'
+    author = gets.chomp
+    book = Book.new(title, author)
+    @books.push(book)
+    puts 'Book created successfully'
+  end
+
   def student_create
     puts 'Name:'
     name = gets.chomp
@@ -63,35 +86,11 @@ class App
     puts 'Person created successfully'
   end
 
-  def teacher_create
-    puts 'Age:'
-    age = gets.chomp
-    puts 'Name:'
-    name = gets.chomp
-    puts 'Specialization:'
-    specialization = gets.chomp
-    parent_permission = true
-    @people.push Teacher.new(age: age, name: name, specialization: specialization,
-                            parent_permission: parent_permission)
-    puts 'Person created successfully'
-  end
-
-  def new_book
-    puts 'Title:'
-    title = gets.chomp
-    puts 'Author:'
-    author = gets.chomp
-    book = Book.new(title, author)
-    @books.push(book)
-    puts 'Book created successfully'
-  end
-
   def new_rental
-
     puts 'select a book from the following list by number'
     book_list
     book_index = gets.chomp.to_i
-    rented_book = @books[book_index]
+    @rented_book = @books[book_index]
 
     puts 'Select a person from the following list by numner (not id)'
     people_list
@@ -99,13 +98,13 @@ class App
     renter = @people[person_index]
     puts 'Date (YYYY-MM-DD):'
     date = gets.chomp
-if renter.can_use_services?
-    @rentals << Rental.new(date, @books[book_index], @people[person_index])
-    puts 'Rental created successfullu!'
-else 
-  puts 'person need borrow permissions'
+    if renter.can_use_services?
+      @rentals << Rental.new(date, @books[book_index], @people[person_index])
+      puts 'Rental created successfullu!'
+    else
+      puts 'person need borrow permissions'
+    end
   end
-end 
 
   def rental_list
     puts 'ID of person:'
@@ -116,7 +115,7 @@ end
     else
       renter.first.rentals.map do |rental|
         puts "#{rental.date}, Book: #{rental.book.title}, by #{rental.book.author}"
+      end
     end
   end
-end
 end
