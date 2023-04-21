@@ -57,7 +57,9 @@ class App
     puts 'Has parent permission? [y/n]:'
     permission = gets.chomp.downcase
     parent_permission = permission == 'y'
-    @people.push Student.new(age, name, parent_permission: parent_permission)
+    puts 'Classroom:'
+    classroom = gets.chomp
+    @people.push Student.new(age: age, name: name, parent_permission: parent_permission, classroom: classroom)
     puts 'Person created successfully'
   end
 
@@ -95,8 +97,7 @@ class App
     people_list
     person_index = gets.chomp.to_i
     renter = @people[person_index]
-
-    puts 'Date: '
+    puts 'Date (YYYY-MM-DD):'
     date = gets.chomp
 if renter.can_use_services?
     @rentals << Rental.new(date, @books[book_index], @people[person_index])
@@ -107,16 +108,15 @@ else
 end 
 
   def rental_list
-    puts 'Enter id of person: '
-    people_list
-    person_id = gets.chomp.to_i
-    person_rentals = @rentals.select { |rental| rental.person.id == person_id }
-    return puts 'No rentals found for this ID' if person_rentals.empty?
-
-    person_rentals.each_with_index do |rental, index|
-      the_rental = "Rental #{index} - Book: #{rental.book.title}"
-      renter = "#{rental.book.author}, Person: #{rental.person.name}, Date: #{rental.date}"
-      puts "#{the_rental} by #{renter}"
+    puts 'ID of person:'
+    renter_id = gets.chomp
+    renter = @people.select { |person| person.id == renter_id.to_i }
+    if renter.empty?
+      puts 'No rentals found'
+    else
+      renter.first.rentals.map do |rental|
+        puts "#{rental.date}, Book: #{rental.book.title}, by #{rental.book.author}"
     end
   end
+end
 end

@@ -1,42 +1,50 @@
 require './app'
-
-def main
-    menu = 'Please choose an option by entering a number:
-      1 - List all books
-      2 - List all people
-      3 - Create a person
-      4 - Create a book
-      5 - Create a rental
-      6 - List all rentals for a given person id
-      7 - Exit'
   
+  def main
     app = App.new
-    while menu
-      puts menu
-      selected = gets.chomp.to_i
-      exit if selected == 7
   
-      run(selected, app)
+    puts 'Welcome to School Library App!'
+    puts ' '
+  
+    loop do
+      display_menu
+      option = gets.chomp
+  
+      if option == '7'
+        puts 'Thank you for using this app!'
+        break
+      end
+  
+      options(option, app)
     end
   end
   
-  def run(selected, app)
-    case selected
-    when 1
-      app.book_list
-    when 2
-      app.people_list
-    when 3
-      app.person_create
-    when 4
-      app.new_book
-    when 5
-      app.new_rental
-    when 6
-      app.rental_list
+  def options(option, app)
+    case option
+    when '1' then app.book_list
+    when '2' then app.people_list
+    when '3' then app.person_create
+    when '4' then app.new_book
+    when '5' then app.new_rental
+    when '6' then app.rental_list
     else
-      puts 'Invalid input. Please try again'
+      puts 'That is not a valid option'
     end
   end
+  
+  def display_menu
+    puts ''
+    puts 'Please choose an option by entering a number:'
+    puts '1 - List all books'
+    puts '2 - List all people'
+    puts '3 - Create a person'
+    puts '4 - Create a book'
+    puts '5 - Create a rental'
+    puts '6 - List all rentals for a given person id'
+    puts '7 - Exit'
+    puts ''
+    print 'Enter number: '
+  end
+
   
   main
